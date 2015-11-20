@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
+import com.alaric.norris.aars.bulltip.bullog.BulLog;
+import com.alaric.norris.aars.bulltip.bullog.BullogConfig;
+
 /**
  * An activity representing a list of Items. This activity
  * has different presentations for handset and tablet-size devices. On
@@ -33,6 +36,10 @@ public class ItemListActivity extends FragmentActivity implements ItemListFragme
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_item_list );
 
+        BulLog.mConfig =
+                new BullogConfig.Builder( true, BullogConfig.TIP_STRATEGY_ALWAYS ).releaseSwitcher(
+                        true
+                ).defaultSuffix( "bull" ).defaultTag( "nrs" ).build().muteSuffix( "" ).deMute();
         if ( findViewById( R.id.item_detail_container ) != null ) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-large and

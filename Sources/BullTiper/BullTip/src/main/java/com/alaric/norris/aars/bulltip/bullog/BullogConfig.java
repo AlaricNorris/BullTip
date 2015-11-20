@@ -12,21 +12,21 @@ package com.alaric.norris.aars.bulltip.bullog;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 
-import com.alaric.norris.aars.bulltip.Zeus;
+import com.alaric.norris.aars.bulltip.GodMode;
 
 import java.util.ArrayList;
 
 /**
- *  ClassName:  BullogConfig
- *  Function:   config class
- Contact:        Norris.sly@gmail.com
- @author AlaricNorris
- @version Ver 1.0
- @since I used to be a programmer like you, then I took an arrow in the knee
-  ****************************************************************************************************
- Modified By     AlaricNorris     2015/11/19    11:01
- Modifications:  ${TODO}
- ***************************************************************************************************
+ * ClassName:  BullogConfig
+ * Function:   config class
+ * Contact:        Norris.sly@gmail.com
+ * @author AlaricNorris
+ * @version Ver 1.0
+ * @since I used to be a programmer like you, then I took an arrow in the knee
+ * ****************************************************************************************************
+ * Modified By     AlaricNorris     2015/11/19    11:01
+ * Modifications:  ${TODO}
+ * ***************************************************************************************************
  */
 public class BullogConfig {
     public static final String OX_TAG = "OxLog";
@@ -58,7 +58,7 @@ public class BullogConfig {
     public final String DefaultSuffix;
 
     /**
-     *  Reference to BuildConfig.Debug
+     *  Reference to BuildConfig.Debug in application
      */
     public final boolean BuildConfig_Debug;
     /**
@@ -67,7 +67,7 @@ public class BullogConfig {
     @TipStrategy
     public final int DefaultStrategy;
     /**
-     * release version log switcher
+     * release version APK log switcher
      * true:    enable log
      * false:   disable log
      */
@@ -78,9 +78,9 @@ public class BullogConfig {
     @NonNull
     private ArrayList< String > Mutable = new ArrayList< String >();
     /**
-     * Zeus
+     * Zeus means GodMode
      */
-    private Zeus mZeus;
+    private GodMode Zeus;
     /**
      * Builder Mode constructor
      * @param inBuilder builder
@@ -110,27 +110,27 @@ public class BullogConfig {
     public int getDefaultStrategy () {
         return DefaultStrategy;
     }
-    public Zeus getZeus () {
-        return mZeus;
+    public GodMode getGodMode () {
+        return Zeus;
     }
-    public void setZeus ( Zeus zeus ) {
-        this.mZeus = zeus;
+    public void setGodMode ( GodMode zeus ) {
+        this.Zeus = zeus;
     }
     /**
-     *  enable Zeus
+     *  enable GodMode
      *  @param mode mode
      *  @return enable successed?
      */
-    public boolean enableGodMode ( @Zeus.Mode int mode ) {
-        setZeus( new Zeus( mode ) );
+    public boolean enableGodMode ( @GodMode.Mode int mode ) {
+        setGodMode( new GodMode( mode ) );
         return true;
     }
     /**
-     *  disable Zeus
+     *  disable GodMode
      *  @return disable successed?
      */
     public boolean disableGodMode () {
-        setZeus( null );
+        setGodMode( null );
         return true;
     }
     /**
